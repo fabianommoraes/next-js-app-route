@@ -1,6 +1,6 @@
 const path = require("node:path");
 const sql = require("better-sqlite3");
-const db = sql(path.resolve(__dirname, "meals.db"));
+const db = sql(path.resolve("meals.db"));
 
 const dummyMeals = [
   {
