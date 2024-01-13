@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 
 import { getMeal } from "@/lib/meals";
 import classes from "./page.module.css";
+import { AWS_S3_URL } from "@/lib/meals";
 
 export default function MealDetailsPage({ params }) {
   const meal = getMeal(params.mealSlug);
@@ -17,7 +18,7 @@ export default function MealDetailsPage({ params }) {
     <>
       <header className={classes.header}>
         <div className={classes.image}>
-          <Image src={meal.image} alt={meal.title} fill />
+          <Image src={`${AWS_S3_URL}/${meal.image}`} alt={meal.title} fill />
         </div>
         <div className={classes.headerText}>
           <h1>{meal.title}</h1>
