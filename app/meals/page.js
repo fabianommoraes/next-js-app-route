@@ -5,6 +5,8 @@ import { getMeals } from "@/lib/meals";
 import { Suspense } from "react";
 import MealsLoadingPage from "./loading-out";
 
+export const revalidate = 10;
+
 async function Meals() {
   const meals = await getMeals();
   return <MealsGrid meals={meals} />;
